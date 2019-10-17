@@ -51,10 +51,10 @@ public class LoginStudent extends JFrame
                 final String username = "root";
                 final String password = "root";
                 try {
-                    Throwable t = null;
-                    try {
+                    
+                    
                         final Connection connection = DriverManager.getConnection(url, username, password);
-                        try {
+                        
                             final String query = "SELECT * FROM login ";
                             final Statement st = connection.createStatement();
                             final ResultSet rs = st.executeQuery(query);
@@ -74,25 +74,7 @@ public class LoginStudent extends JFrame
                                 JOptionPane.showMessageDialog(null, "UserName/Password did not match");
                             }
                             connection.close();
-                        }
-                        finally {
-                            if (connection != null) {
-                                connection.close();
-                            }
-                        }
-                    }
-                    finally {
-                        if (t == null) {
-                            final Throwable exception = null;
-                            t = exception;
-                        }
-                        else {
-                            final Throwable exception = null;
-                            if (t != exception) {
-                                t.addSuppressed(exception);
-                            }
-                        }
-                    }
+                     
                 }
                 catch (Exception err) {
                     JOptionPane.showMessageDialog(null, "error" + err);

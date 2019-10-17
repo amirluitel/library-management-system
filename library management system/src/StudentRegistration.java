@@ -102,10 +102,9 @@ public class StudentRegistration extends JFrame
                         final String username = "root";
                         final String password = "root";
                         try {
-                            Throwable t = null;
-                            try {
+                           
                                 final Connection connection = DriverManager.getConnection(url, username, password);
-                                try {
+                                
                                     final String query = "Insert into login values('" + UserName + "','" + Password + "','" + id + "','" + Email + "')";
                                     final Statement st = connection.createStatement();
                                     st.executeUpdate(query);
@@ -115,30 +114,12 @@ public class StudentRegistration extends JFrame
                                     StudentRegistration.this.StudentPassword.setText(null);
                                     StudentRegistration.this.StudentEmail.setText(null);
                                     connection.close();
-                                }
-                                finally {
-                                    if (connection != null) {
-                                        connection.close();
-                                    }
-                                }
-                            }
-                            finally {
-                                if (t == null) {
-                                    final Throwable exception = null;
-                                    t = exception;
-                                }
-                                else {
-                                    final Throwable exception = null;
-                                    if (t != exception) {
-                                        t.addSuppressed(exception);
-                                    }
-                                }
-                            }
-                        }
+                                
+                                                       }
                         catch (SQLException err) {
-                            if (err.getErrorCode() == 1062) {
+                            
                                 JOptionPane.showMessageDialog(null, "ID you have entered is not valid");
-                            }
+                            
                             StudentRegistration.this.StudentId.setText(null);
                         }
                     }
