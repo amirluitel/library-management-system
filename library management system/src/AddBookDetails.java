@@ -21,6 +21,7 @@ import javax.swing.JTextField;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 
+//Adding books details
 public class AddBookDetails extends JFrame
 {
     private JPanel contentPane;
